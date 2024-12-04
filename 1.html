@@ -7,12 +7,43 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin-top: 50px;
+            margin: 0; /* 移除顶部边距 */
+            background-color: #f0f0f0; /* 设置背景颜色 */
+        }
+
+        .glass-effect {
+            position: relative;
+            width: 80%;
+            max-width: 600px; /* 最大宽度 */
+            margin: 50px auto; /* 居中并设置上下边距 */
+            background: url('your-background-image.jpg') center center / cover no-repeat;
+            background-blend-mode: multiply;
+            backdrop-filter: blur(10px) saturate(150%);
+            -webkit-backdrop-filter: blur(10px) saturate(150%);
+            border-radius: 16px;
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .glass-effect:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 16px;
+            z-index: -1;
         }
 
         h1 {
             color: #333;
             margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 添加文字阴影以增强长虹玻璃效果 */
         }
 
         h1::after {
